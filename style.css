@@ -1004,13 +1004,19 @@ ul { list-style: none; }
   margin-bottom: 16px;
 }
 .tech-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 0.77rem;
   font-weight: 600;
   color: var(--accent-light);
   background: rgba(59,130,246,0.1);
   border: 1px solid rgba(59,130,246,0.2);
-  padding: 3px 10px;
+  padding: 4px 10px;
   border-radius: var(--radius-full);
+}
+.tech-tag i {
+  font-size: 1.1em;
 }
 .project-links { display: flex; gap: 10px; }
 .project-card.featured {
