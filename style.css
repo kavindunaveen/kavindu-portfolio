@@ -1020,39 +1020,6 @@ ul { list-style: none; }
   aspect-ratio: 21/9;
 }
 
-.dashboard-presentation {
-  background: radial-gradient(circle at top, rgba(30, 58, 138, 0.25) 0%, rgba(12, 18, 32, 1) 100%);
-  padding: 30px 40px 0 40px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.dashboard-presentation .project-img {
-  width: 100%;
-  max-width: 800px;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  border-radius: 8px 8px 0 0;
-  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: none;
-}
-
-.project-card:hover .dashboard-presentation .project-img {
-  transform: translateY(-8px) scale(1.02);
-}
-
-@media (max-width: 768px) {
-  .project-card.featured .project-img-wrap {
-    aspect-ratio: 16/11;
-  }
-  .dashboard-presentation {
-    padding: 15px 15px 0 15px;
-  }
-}
-
 /* =============================================
    EDUCATION
    ============================================= */
