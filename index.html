@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kavindu Naveen | Full-Stack Engineer & ERP Developer</title>
+  <meta name="description" content="Kavindu Naveen — Full-Stack Engineer specializing in Django, React Native, ERP Systems & Business Automation. Open to Remote Opportunities." />
+  <meta name="keywords" content="Kavindu Naveen, Full-Stack Engineer, Django Developer, React Native, ERP Systems, Remote Developer, Sri Lanka" />
+  <meta property="og:title" content="Kavindu Naveen | Full-Stack Engineer" />
+  <meta property="og:description" content="Full-Stack Engineer with 2+ years of experience in ERP systems, mobile apps & web development. Open to Remote." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        Kavindu<span style="color: var(--accent);">.</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-primary btn-sm" id="hireMeBtn">Hire Me</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="#about" class="mobile-link">About</a></li>
+        <li><a href="#skills" class="mobile-link">Skills</a></li>
+        <li><a href="#experience" class="mobile-link">Experience</a></li>
+        <li><a href="#projects" class="mobile-link">Projects</a></li>
+        <li><a href="#education" class="mobile-link">Education</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <canvas class="particle-canvas" id="particleCanvas"></canvas>
+    <div class="hero-bg-gradient"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Available for Remote Work
+      </div>
+      <h1 class="hero-title">
+        Hi, I'm <span class="gradient-text">Kavindu Naveen</span>
+      </h1>
+      <div class="hero-role">
+        <span class="role-prefix">I build </span>
+        <span class="typewriter" id="typewriter"></span>
+        <span class="cursor-blink">|</span>
+      </div>
+      <p class="hero-description">
+        Full-Stack Engineer with 2+ years building ERP systems, mobile apps & business automation platforms. 
+        Based in <strong>Colombo, Sri Lanka</strong> · UTC+5:30
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary" id="viewWorkBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          View My Work
+        </a>
+        <a href="#contact" class="btn btn-outline" id="contactBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Get In Touch
+        </a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://github.com/kavindunaveen" target="_blank" rel="noopener" class="social-link" id="githubLink" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/iamkavindu3/" target="_blank" rel="noopener" class="social-link" id="linkedinLink" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="mailto:kavindun277@gmail.com" class="social-link" id="emailLink" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-image-wrap">
+      <div class="hero-image-ring ring-3"></div>
+      <div class="hero-image-ring ring-2"></div>
+      <div class="hero-image-ring ring-1"></div>
+      <div class="hero-image-container">
+        <img src="assets/kavindu.jpg" alt="Kavindu Naveen" class="hero-image" id="profileImg" />
+      </div>
+      <div class="hero-stats">
+        <div class="stat-chip" style="--delay: 0s">
+          <span class="stat-num">2+</span>
+          <span class="stat-label">Yrs Exp</span>
+        </div>
+        <div class="stat-chip" style="--delay: 0.2s">
+          <span class="stat-num">5+</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-chip" style="--delay: 0.4s">
+          <span class="stat-num">1</span>
+          <span class="stat-label">ERP Built</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Who I Am</span>
+        <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p class="about-lead">
+            I'm a <strong>Full-Stack Engineer</strong> based in Colombo, Sri Lanka, specializing in building 
+            production-grade ERP systems, mobile applications, and business automation platforms.
+          </p>
+          <p>
+            Currently at <strong>Everbolt Engineering (Pvt) Ltd</strong>, I've architected and delivered 
+            <em>Everbolt Food ERP</em> — a complete Django-based platform covering CRM, inventory, sales, 
+            manufacturing, finance, and deliveries. I love translating complex manual workflows into 
+            clean, scalable software solutions.
+          </p>
+          <p>
+            My philosophy: real business impact over technical complexity. I work closely with operations 
+            teams, understand the actual pain points, and build tools that people actually use every day.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <div class="highlight-icon">🌍</div>
+              <div>
+                <strong>Open to Remote</strong>
+                <span>Full-Stack, Backend, ERP & Business Automation roles</span>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon">🕐</div>
+              <div>
+                <strong>Timezone: UTC+5:30</strong>
+                <span>Flexible overlap with EU/UK & APAC teams</span>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon">📱</div>
+              <div>
+                <strong>+94 71 370 2074</strong>
+                <span>kavindun277@gmail.com</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-cta-row">
+            <a href="https://github.com/kavindunaveen" target="_blank" class="btn btn-outline btn-sm">
+              View GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/iamkavindu3/" target="_blank" class="btn btn-outline btn-sm">
+              LinkedIn Profile
+            </a>
+          </div>
+        </div>
+        <div class="about-right reveal">
+          <div class="strengths-card glass-card">
+            <h3>Professional Strengths</h3>
+            <ul class="strength-list">
+              <li>
+                <span class="strength-icon">⚡</span>
+                <span>Deep understanding of real business operations — inventory, sales, finance & field workforce</span>
+              </li>
+              <li>
+                <span class="strength-icon">🔧</span>
+                <span>Full-stack across frontend, backend, database, cloud & ERP administration</span>
+              </li>
+              <li>
+                <span class="strength-icon">🤝</span>
+                <span>Comfortable with remote collaboration, technical documentation & direct communication</span>
+              </li>
+              <li>
+                <span class="strength-icon">🚀</span>
+                <span>Git-based development workflows, troubleshooting & business-user onboarding</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">What I Know</span>
+        <h2 class="section-title">Tech <span class="gradient-text">Stack</span></h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category glass-card reveal" style="--delay: 0s">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">⚙️</div>
+            <h3>Backend</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Django</span>
+            <span class="skill-tag">Flask</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Express.js</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">PHP</span>
+          </div>
+        </div>
+        <div class="skill-category glass-card reveal" style="--delay: 0.1s">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">🎨</div>
+            <h3>Frontend & Mobile</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">React Native</span>
+            <span class="skill-tag">Expo</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">Bootstrap</span>
+          </div>
+        </div>
+        <div class="skill-category glass-card reveal" style="--delay: 0.2s">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">🗄️</div>
+            <h3>Databases</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">SQLite</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">Firebase</span>
+          </div>
+        </div>
+        <div class="skill-category glass-card reveal" style="--delay: 0.3s">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">☁️</div>
+            <h3>Cloud & DevOps</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">AWS EC2</span>
+            <span class="skill-tag">S3</span>
+            <span class="skill-tag">RDS</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+          </div>
+        </div>
+        <div class="skill-category glass-card reveal" style="--delay: 0.4s">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">🏢</div>
+            <h3>Systems & ERP</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Windows Server</span>
+            <span class="skill-tag">Microsoft 365</span>
+            <span class="skill-tag">Odoo ERP</span>
+            <span class="skill-tag">Azure</span>
+            <span class="skill-tag">Business Automation</span>
+          </div>
+        </div>
+        <div class="skill-category glass-card reveal" style="--delay: 0.5s">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">🛒</div>
+            <h3>CMS & eCommerce</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">WordPress</span>
+            <span class="skill-tag">WooCommerce</span>
+            <span class="skill-tag">Elementor</span>
+            <span class="skill-tag">SEO</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Where I've Worked</span>
+        <h2 class="section-title">Work <span class="gradient-text">Experience</span></h2>
+      </div>
+      <div class="timeline">
+        <!-- Job 1 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-marker">
+            <div class="timeline-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-content glass-card">
+            <div class="job-header">
+              <div class="job-info">
+                <h3 class="job-title">System Engineer — Full-Stack, ERP & Infrastructure</h3>
+                <div class="job-company">
+                  <span class="company-badge">Everbolt Engineering (Pvt) Ltd</span>
+                </div>
+              </div>
+              <div class="job-meta">
+                <span class="job-date">Jan 2026 – Present</span>
+                <span class="job-type current">Current</span>
+              </div>
+            </div>
+            <ul class="job-bullets">
+              <li>Develop and maintain internal ERP systems, mobile apps, business automation tools & infrastructure for Everbolt Engineering and Everbolt Food.</li>
+              <li>Built and enhanced <strong>Everbolt Food ERP</strong> — a Django-based platform covering CRM, inventory, sales, purchasing, manufacturing, finance, deliveries, dashboards, users & website modules.</li>
+              <li>Manage Odoo ERP, Microsoft 365, Windows Server, Azure-supported infrastructure, admin panels & security settings.</li>
+              <li>Collaborate with management to identify manual workflow gaps and convert them into scalable software solutions.</li>
+            </ul>
+            <div class="job-tags">
+              <span>Django</span><span>Python</span><span>AWS</span><span>Odoo ERP</span><span>Microsoft 365</span><span>Azure</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-marker">
+            <div class="timeline-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-content glass-card">
+            <div class="job-header">
+              <div class="job-info">
+                <h3 class="job-title">Associate System Engineer</h3>
+                <div class="job-company">
+                  <span class="company-badge">Everbolt Engineering (Pvt) Ltd</span>
+                </div>
+              </div>
+              <div class="job-meta">
+                <span class="job-date">Jul 2024 – Dec 2025</span>
+              </div>
+            </div>
+            <ul class="job-bullets">
+              <li>Designed and developed a <strong>corporate operations mobile app</strong> using React Native, Node.js, Firebase, MySQL, Google Scripts & REST APIs.</li>
+              <li>Built GPS-based attendance, sales visit tracking & client contact synchronization for distributed sales teams.</li>
+              <li>Developed Django-based inventory, invoicing, product management, stock-in/out, pricing & audit-friendly workflows.</li>
+              <li>Supported ERP administration, Microsoft 365, Windows Server, internal admin panels & day-to-day operations.</li>
+            </ul>
+            <div class="job-tags">
+              <span>React Native</span><span>Node.js</span><span>Firebase</span><span>Django</span><span>MySQL</span><span>Google Scripts</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-marker">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-content glass-card">
+            <div class="job-header">
+              <div class="job-info">
+                <h3 class="job-title">Intern System Engineer</h3>
+                <div class="job-company">
+                  <span class="company-badge">Everbolt Engineering (Pvt) Ltd</span>
+                </div>
+              </div>
+              <div class="job-meta">
+                <span class="job-date">Jan 2024 – Jul 2024</span>
+              </div>
+            </div>
+            <ul class="job-bullets">
+              <li>Developed custom eCommerce websites using WordPress, Elementor, WooCommerce & PHP.</li>
+              <li>Integrated payment gateways, configured product/order workflows & improved SEO through on/off-page optimization.</li>
+              <li>Supported firewall configuration, helpdesk operations, network setup, system troubleshooting & internal IT support.</li>
+            </ul>
+            <div class="job-tags">
+              <span>WordPress</span><span>WooCommerce</span><span>Elementor</span><span>PHP</span><span>SEO</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section section-alt" id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">What I've Built</span>
+        <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs reveal">
+        <button class="filter-btn active" data-filter="all" id="filterAll">All</button>
+        <button class="filter-btn" data-filter="erp" id="filterErp">ERP System</button>
+        <button class="filter-btn" data-filter="mobile" id="filterMobile">Mobile App</button>
+        <button class="filter-btn" data-filter="web" id="filterWeb">Websites</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- ERP Project -->
+        <div class="project-card glass-card reveal featured" data-category="erp">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder erp-placeholder">
+              <div class="ph-icon">📊</div>
+              <span class="ph-label">Everbolt Food ERP Dashboard</span>
+            </div>
+            <div class="project-overlay">
+              <span class="project-type-badge">Full-Stack ERP</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Everbolt Food ERP</h3>
+            <p class="project-desc">
+              A modular, production-grade ERP system for a food manufacturing company. Covers CRM, customer & supplier management, inventory, sales, purchases, manufacturing, finance, deliveries, user roles & website management.
+            </p>
+            <div class="project-features">
+              <span>Stock Ledgers</span>
+              <span>Sales Workflows</span>
+              <span>Manufacturing</span>
+              <span>Finance Module</span>
+              <span>Multi-role Auth</span>
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Django</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Bootstrap</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">AWS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile App -->
+        <div class="project-card glass-card reveal" data-category="mobile">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder mobile-placeholder">
+              <div class="ph-icon">📱</div>
+              <span class="ph-label">Corporate Operations Mobile App</span>
+            </div>
+            <div class="project-overlay">
+              <span class="project-type-badge">Mobile App</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Corporate Operations Mobile App</h3>
+            <p class="project-desc">
+              A production-ready Android app for managing distributed sales teams, office staff, attendance & field operations. Deployed on Google Play Store.
+            </p>
+            <div class="project-features">
+              <span>GPS Attendance</span>
+              <span>Sales Tracking</span>
+              <span>Contact Sync</span>
+              <span>Play Store Live</span>
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">React Native</span>
+              <span class="tech-tag">Expo</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Firebase</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">REST APIs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hara Ceylon -->
+        <div class="project-card glass-card reveal" data-category="web">
+          <div class="project-img-wrap project-img-live">
+            <div class="live-preview-placeholder" data-url="https://haraceylon.com/">
+              <div class="site-preview-icon">🌐</div>
+              <span class="site-url">haraceylon.com</span>
+              <span class="live-badge-inline">Live</span>
+            </div>
+            <div class="project-overlay">
+              <span class="project-type-badge">eCommerce</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Hara Ceylon</h3>
+            <p class="project-desc">
+              Custom eCommerce website with WooCommerce product catalog, checkout flows, payment gateway integration & SEO optimization.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">WordPress</span>
+              <span class="tech-tag">WooCommerce</span>
+              <span class="tech-tag">Elementor</span>
+              <span class="tech-tag">SEO</span>
+            </div>
+            <div class="project-links">
+              <a href="https://haraceylon.com/" target="_blank" rel="noopener" class="btn btn-sm btn-primary" id="haraCeylonLive">View Live ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Websynic -->
+        <div class="project-card glass-card reveal" data-category="web">
+          <div class="project-img-wrap project-img-live">
+            <div class="live-preview-placeholder" data-url="https://websynic.com/">
+              <div class="site-preview-icon">💻</div>
+              <span class="site-url">websynic.com</span>
+              <span class="live-badge-inline">Live</span>
+            </div>
+            <div class="project-overlay">
+              <span class="project-type-badge">Business Site</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Websynic</h3>
+            <p class="project-desc">
+              Professional business website with optimized page layouts, product/service content management, metadata improvements & on-page SEO.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">WordPress</span>
+              <span class="tech-tag">Elementor</span>
+              <span class="tech-tag">PHP</span>
+              <span class="tech-tag">SEO</span>
+            </div>
+            <div class="project-links">
+              <a href="https://websynic.com/" target="_blank" rel="noopener" class="btn btn-sm btn-primary" id="websynicLive">View Live ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hybrid Repair Center -->
+        <div class="project-card glass-card reveal" data-category="web">
+          <div class="project-img-wrap project-img-live">
+            <div class="live-preview-placeholder" data-url="https://hybridrepaircenter.com/">
+              <div class="site-preview-icon">🔧</div>
+              <span class="site-url">hybridrepaircenter.com</span>
+              <span class="live-badge-inline">Live</span>
+            </div>
+            <div class="project-overlay">
+              <span class="project-type-badge">Service Site</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Hybrid Repair Center</h3>
+            <p class="project-desc">
+              Service business website with booking, service catalog, testimonials and complete SEO structure for local search visibility.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">WordPress</span>
+              <span class="tech-tag">WooCommerce</span>
+              <span class="tech-tag">Elementor</span>
+              <span class="tech-tag">SEO</span>
+            </div>
+            <div class="project-links">
+              <a href="https://hybridrepaircenter.com/" target="_blank" rel="noopener" class="btn btn-sm btn-primary" id="hybridLive">View Live ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Organic Food Lanka -->
+        <div class="project-card glass-card reveal" data-category="web">
+          <div class="project-img-wrap project-img-live">
+            <div class="live-preview-placeholder" data-url="https://organicfoodslanka.com/">
+              <div class="site-preview-icon">🌿</div>
+              <span class="site-url">organicfoodslanka.com</span>
+              <span class="live-badge-inline">Live</span>
+            </div>
+            <div class="project-overlay">
+              <span class="project-type-badge">eCommerce</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Organic Foods Lanka</h3>
+            <p class="project-desc">
+              eCommerce platform for organic food products with payment gateway, product ordering workflows & performance-optimized SEO structure.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">WordPress</span>
+              <span class="tech-tag">WooCommerce</span>
+              <span class="tech-tag">Elementor</span>
+              <span class="tech-tag">PHP</span>
+            </div>
+            <div class="project-links">
+              <a href="https://organicfoodslanka.com/" target="_blank" rel="noopener" class="btn btn-sm btn-primary" id="organicLive">View Live ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- RKR Enterprises (expired) -->
+        <div class="project-card glass-card reveal" data-category="web">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder rkr-placeholder">
+              <div class="ph-icon">🏗️</div>
+              <span class="ph-label">RKR Enterprises — Corporate Website</span>
+            </div>
+            <div class="project-overlay">
+              <span class="project-type-badge expired-badge">Archived</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">RKR Enterprises</h3>
+            <p class="project-desc">
+              Corporate construction & engineering company website with project portfolio, services showcase, contact forms & SEO optimization. Domain expired.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">WordPress</span>
+              <span class="tech-tag">Elementor</span>
+              <span class="tech-tag">PHP</span>
+              <span class="tech-tag">SEO</span>
+            </div>
+            <div class="project-links">
+              <a href="https://www.behance.net/gallery/218535757/RKR-Enterprises-Website" target="_blank" rel="noopener" class="btn btn-sm btn-outline" id="rkrBehance">View on Behance ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Apura Lanka Tours (expired) -->
+        <div class="project-card glass-card reveal" data-category="web">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder tours-placeholder">
+              <div class="ph-icon">✈️</div>
+              <span class="ph-label">Apura Lanka Tours — Travel Website</span>
+            </div>
+            <div class="project-overlay">
+              <span class="project-type-badge expired-badge">Archived</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Apura Lanka Tours</h3>
+            <p class="project-desc">
+              Travel & tourism website for a Sri Lanka tour operator, featuring tour packages, destination galleries, booking flow & WooCommerce integration.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">WordPress</span>
+              <span class="tech-tag">WooCommerce</span>
+              <span class="tech-tag">Elementor</span>
+              <span class="tech-tag">SEO</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="section" id="education">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">My Background</span>
+        <h2 class="section-title">Edu<span class="gradient-text">cation</span></h2>
+      </div>
+      <div class="education-grid">
+        <div class="edu-card glass-card reveal">
+          <div class="edu-icon">🎓</div>
+          <div class="edu-body">
+            <h3>BSc (Hons) in Information Technology</h3>
+            <div class="edu-school">Sri Lanka Institute of Information Technology (SLIIT)</div>
+            <div class="edu-year">2021 – 2025</div>
+            <p class="edu-note">Focused on software engineering, databases, systems design & networking.</p>
+          </div>
+        </div>
+        <div class="edu-card glass-card reveal" style="--delay: 0.15s">
+          <div class="edu-icon">📚</div>
+          <div class="edu-body">
+            <h3>GCE Advanced Level — Commerce Stream</h3>
+            <div class="edu-school">Walisinghe Harischandra College, Anuradhapura</div>
+            <div class="edu-year">2020</div>
+          </div>
+        </div>
+        <div class="edu-card glass-card reveal" style="--delay: 0.3s">
+          <div class="edu-icon">📖</div>
+          <div class="edu-body">
+            <h3>GCE Ordinary Level</h3>
+            <div class="edu-school">Walisinghe Harischandra College, Anuradhapura</div>
+            <div class="edu-year">2017</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Let's Connect</span>
+        <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+        <p class="section-subtitle">Open to remote full-stack, backend, ERP & business automation roles. Let's build something great together.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-card glass-card">
+            <h3>Contact Details</h3>
+            <div class="contact-items">
+              <div class="contact-item" id="emailItem">
+                <div class="contact-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div>
+                  <span class="contact-label">Email</span>
+                  <a href="mailto:kavindun277@gmail.com" class="contact-value" id="emailValue">kavindun277@gmail.com</a>
+                </div>
+                <button class="copy-btn" id="copyEmail" onclick="copyToClipboard('kavindun277@gmail.com', this)" title="Copy email">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div>
+                  <span class="contact-label">Phone / WhatsApp</span>
+                  <a href="tel:+94713702074" class="contact-value" id="phoneValue">+94 71 370 2074</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <span class="contact-label">Location</span>
+                  <span class="contact-value">Colombo, Sri Lanka · UTC+5:30</span>
+                </div>
+              </div>
+            </div>
+            <div class="contact-socials">
+              <a href="https://github.com/kavindunaveen" target="_blank" rel="noopener" class="social-pill" id="contactGithub">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/iamkavindu3/" target="_blank" rel="noopener" class="social-pill" id="contactLinkedin">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-wrap reveal">
+          <form class="contact-form glass-card" id="contactForm" onsubmit="handleFormSubmit(event)" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <h3>Send a Message</h3>
+            <div class="form-group">
+              <label for="contactName">Name</label>
+              <input type="text" id="contactName" name="name" placeholder="Your full name" required />
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Email</label>
+              <input type="email" id="contactEmail" name="email" placeholder="your@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="contactSubject">Subject</label>
+              <input type="text" id="contactSubject" name="subject" placeholder="Remote opportunity / Collaboration..." />
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" name="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary full-width" id="submitContact">
+              <span class="btn-text">Send Message</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+            <p class="form-note">* I'll respond within 24 hours. References available on request.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          Kavindu<span style="color: var(--accent);">.</span>
+        </div>
+        <nav class="footer-nav">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-copyright" style="text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 0.9rem;">
+        &copy; <span id="currentYear"></span> Kavindu Naveen. All rights reserved.
+        <script>document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
