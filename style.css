@@ -740,6 +740,9 @@ ul { list-style: none; }
 }
 .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .skill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 0.8rem;
   font-weight: 500;
   color: var(--accent-light);
@@ -748,6 +751,9 @@ ul { list-style: none; }
   padding: 4px 12px;
   border-radius: var(--radius-full);
   transition: var(--transition-fast);
+}
+.skill-tag i, .skill-tag svg {
+  font-size: 1.15em;
 }
 .skill-tag:hover { background: rgba(59,130,246,0.2); border-color: var(--accent); }
 
@@ -869,13 +875,19 @@ ul { list-style: none; }
   margin-top: 14px;
 }
 .job-tags span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 0.77rem;
   font-weight: 500;
   color: var(--text-muted);
   background: rgba(255,255,255,0.04);
   border: 1px solid var(--border);
-  padding: 3px 10px;
+  padding: 4px 10px;
   border-radius: var(--radius-full);
+}
+.job-tags span i, .job-tags span svg {
+  font-size: 1.1em;
 }
 
 /* =============================================
