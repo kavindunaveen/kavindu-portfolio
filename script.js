@@ -426,17 +426,7 @@ if (heroWrap && window.innerWidth > 900) {
 }
 
 // ---- Skill tags hover color variety ----
-const skillTags = document.querySelectorAll('.skill-tag');
-const tagColors = [
-  'rgba(59,130,246', 'rgba(6,182,212', 'rgba(139,92,246',
-  'rgba(236,72,153', 'rgba(245,158,11', 'rgba(34,197,94',
-];
-skillTags.forEach((tag, i) => {
-  const color = tagColors[i % tagColors.length];
-  tag.style.color = color + ',0.9)';
-  tag.style.background = color + ',0.1)';
-  tag.style.borderColor = color + ',0.25)';
-});
+// (handled by CSS now)
 
 // ---- Number counter animation (stats) ----
 function animateCounter(el, target, duration = 1500) {
@@ -459,4 +449,80 @@ window.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.skills-grid .reveal, .projects-grid .reveal, .education-grid .reveal').forEach((el, i) => {
     el.style.setProperty('--delay', (i * 0.08) + 's');
   });
+
+  // ---- Custom Cursor ----
+  const cursorDot = document.getElementById('cursorDot');
+  const cursorOutline = document.getElementById('cursorOutline');
+  if (cursorDot && cursorOutline && window.matchMedia('(hover: hover)').matches) {
+    let mouseX = 0, mouseY = 0;
+    let outlineX = 0, outlineY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      cursorDot.style.left = mouseX + 'px';
+      cursorDot.style.top = mouseY + 'px';
+    }, { passive: true });
+
+    // Smooth trailing outline
+    function animateOutline() {
+      outlineX += (mouseX - outlineX) * 0.15;
+      outlineY += (mouseY - outlineY) * 0.15;
+      cursorOutline.style.left = outlineX + 'px';
+      cursorOutline.style.top = outlineY + 'px';
+      requestAnimationFrame(animateOutline);
+    }
+    animateOutline();
+
+    // Hover effect on interactive elements
+    const hoverTargets = document.querySelectorAll('a, button, .skill-tag, .tech-tag, .project-card, .filter-btn, input, textarea');
+    hoverTargets.forEach(el => {
+      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+    });
+  }
+
+  // ---- Animated Stat Counters (IntersectionObserver) ----
+  const statCounters = document.querySelectorAll('.stat-counter-number');
+  if (statCounters.length > 0) {
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.target);
+          const suffix = el.dataset.suffix || '';
+          animateCounter(el, target, 1200);
+          // Add suffix after animation
+          setTimeout(() => {
+            el.textContent = target + suffix;
+          }, 1300);
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    statCounters.forEach(el => counterObserver.observe(el));
+  }
+
+  // ---- Mobile Sticky CTA Bar ----
+  const mobileStickyBar = document.getElementById('mobileStickyBar');
+  if (mobileStickyBar) {
+    let lastScrollY = 0;
+    const heroSection = document.getElementById('home');
+    
+    function updateMobileSticky() {
+      const scrollY = window.scrollY;
+      const heroBottom = heroSection ? heroSection.offsetTop + heroSection.offsetHeight : 400;
+      
+      if (scrollY > heroBottom && window.innerWidth <= 768) {
+        mobileStickyBar.classList.add('visible');
+      } else {
+        mobileStickyBar.classList.remove('visible');
+      }
+      lastScrollY = scrollY;
+    }
+
+    window.addEventListener('scroll', updateMobileSticky, { passive: true });
+    window.addEventListener('resize', updateMobileSticky, { passive: true });
+  }
 });

@@ -1382,5 +1382,232 @@ a.contact-value:hover { color: var(--accent-light); }
   .footer-inner { flex-direction: column; text-align: center; }
   .footer-nav { margin-left: 0; }
   .timeline-item { grid-template-columns: 20px 1fr; gap: 0 16px; }
-  .back-to-top { bottom: 20px; right: 20px; }
+  .back-to-top { bottom: 70px; right: 20px; }
+}
+
+/* =============================================
+   CUSTOM CURSOR
+   ============================================= */
+.cursor-dot {
+  position: fixed;
+  top: 0; left: 0;
+  width: 8px; height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: width 0.15s, height 0.15s, background 0.15s;
+}
+.cursor-outline {
+  position: fixed;
+  top: 0; left: 0;
+  width: 36px; height: 36px;
+  border: 2px solid rgba(59,130,246,0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s ease, height 0.25s ease, border-color 0.25s;
+}
+.cursor-hover .cursor-dot {
+  width: 40px; height: 40px;
+  background: rgba(59,130,246,0.15);
+  mix-blend-mode: screen;
+}
+.cursor-hover .cursor-outline {
+  width: 50px; height: 50px;
+  border-color: var(--accent);
+}
+
+@media (hover: none), (max-width: 768px) {
+  .cursor-dot, .cursor-outline { display: none !important; }
+}
+
+/* =============================================
+   HERO ENTRANCE ANIMATION
+   ============================================= */
+.hero-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroFadeIn 0.7s ease forwards;
+  animation-delay: calc(var(--stagger) * 0.12s + 0.2s);
+}
+@keyframes heroFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-image-wrap {
+  opacity: 0;
+  animation: heroImageIn 0.9s ease forwards;
+  animation-delay: 0.5s;
+}
+@keyframes heroImageIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* =============================================
+   STATS COUNTER SECTION
+   ============================================= */
+.stats-section {
+  padding: 60px 0;
+  position: relative;
+}
+.stats-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(59,130,246,0.3), transparent);
+}
+.stats-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(59,130,246,0.3), transparent);
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.stat-counter-card {
+  text-align: center;
+  padding: 32px 16px;
+  border-radius: var(--radius-lg);
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.stat-counter-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: radial-gradient(circle at center top, rgba(59,130,246,0.08) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.stat-counter-card:hover::before { opacity: 1; }
+.stat-counter-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(59,130,246,0.2);
+  box-shadow: 0 10px 40px -10px rgba(59,130,246,0.15);
+}
+.stat-counter-icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+.stat-counter-number {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 900;
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+.stat-counter-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* =============================================
+   PROJECT OVERLAY ENHANCEMENT
+   ============================================= */
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(7, 11, 20, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+.project-overlay .preview-icon {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: rgba(59,130,246,0.2);
+  border: 1px solid rgba(59,130,246,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+}
+
+/* =============================================
+   MOBILE STICKY CTA BAR
+   ============================================= */
+.mobile-sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0; right: 0;
+  z-index: 999;
+  padding: 10px 16px;
+  background: rgba(7, 11, 20, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  gap: 10px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+.mobile-sticky-cta.visible {
+  transform: translateY(0);
+}
+.sticky-cta-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.sticky-cta-primary {
+  background: var(--gradient-main);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(59,130,246,0.3);
+}
+.sticky-cta-outline {
+  background: rgba(255,255,255,0.06);
+  color: var(--text-primary);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+@media (max-width: 768px) {
+  .mobile-sticky-cta {
+    display: flex;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .stat-counter-card { padding: 20px 12px; }
+  .stat-counter-number { font-size: 2.2rem; }
+  .stat-counter-label { font-size: 0.75rem; }
 }
